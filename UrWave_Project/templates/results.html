@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recommended Playlist</title>
+</head>
+<body>
+    <h1>Recommended Playlist for {{ mood|capitalize }}</h1>
+    <ul>
+        {% for song in recommended_playlist %}
+        <li>{{ song }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
+{% endblock %}

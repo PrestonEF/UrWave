@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mood-based Playlist Recommender</title>
+</head>
+<body>
+
+    <h1>Answer a few questions to help us determine your mood.</h1>
+
+    <form action="/music" method="post">
+        <label for="mood">1. How are you feeling right now? (e.g., happy, sad, relaxed):</label><br>
+        <input type="text" id="mood" name="mood"><br><br>
+
+        <label for="activity">2. What kind of activities are you planning or currently engaged in? (e.g., workout, study, relax):</label><br>
+        <input type="text" id="activity" name="activity"><br><br>
+
+        <label for="weather">3. What's the weather like where you are? (e.g., sunny, rainy, snowy):</label><br>
+        <input type="text" id="weather" name="weather"><br><br>
+
+        <label for="color">4. Select a color that best represents your mood:</label><br>
+        <input type="text" id="color" name="color"><br><br>
+
+        <label for="music_preference">5. What type of music are you in the mood for? (e.g., pop, rock, acoustic):</label><br>
+        <input type="text" id="music_preference" name="music_preference"><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+    {% if error %}
+    <p>{{ error }}</p>
+    {% endif %}
+
+</body>
+</html>
+
+{% endblock %}

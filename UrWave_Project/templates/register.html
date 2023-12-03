@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <form action="/register" method="post">
+        <h1>Register</h1>
+        <label for="username">Username:</label><br>
+        <input type="text" name="username" placeholder="Username"><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" name="password" placeholder="Password"><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" name="email" placeholder="Email"><br><br>
+
+        <input type="submit" value="register">
+    </form>
+    {% if error %}
+    <p>{{ error }}</p>
+    {% endif %}
+
+</body>
+</html>
+
+{% endblock %}
